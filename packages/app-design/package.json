@@ -3,5 +3,21 @@
   "version": "0.0.1",
   "main": "./src/index.tsx",
   "license": "MIT",
-  "private": true
+  "private": true,
+  "scripts": {
+    "storybook": "start-storybook -p 6006",
+    "build-storybook": "build-storybook",
+    "chromatic": "chromatic --project-token=TOKEN --exit-zero-on-changes --exit-once-uploaded --preserve-missing"
+  },
+  "devDependencies": {
+    "@storybook/addon-actions": "^6.4.9",
+    "@storybook/addon-docs": "^6.4.9",
+    "@storybook/addon-essentials": "^6.4.9",
+    "@storybook/addon-links": "^6.4.9",
+    "@storybook/builder-webpack5": "^6.4.9",
+    "@storybook/manager-webpack5": "^6.4.9",
+    "@storybook/react": "^6.4.9",
+    "csstype": "^3.0.10",
+    "storybook-addon-designs": "^6.2.0"
+  }
 }

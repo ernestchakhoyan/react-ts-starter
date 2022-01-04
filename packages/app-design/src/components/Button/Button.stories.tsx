@@ -1,21 +1,21 @@
 import React from "react";
 import {Story, Meta} from "@storybook/react";
 
-import {Button, ButtonProps} from "./index";
+import {Button as ButtonComponent, ButtonProps} from "./index";
 
 
 export default {
-    title: "",
-    component: Button,
+    title: "BaseComponents/Button",
+    component: ButtonComponent,
     parameters: {
-        componentSubtitle: "",
+        componentSubtitle: "Button UI component",
     },
     args: {},
     argTypes: {},
 } as Meta;
 
 const Template: Story<ButtonProps> = (args) => {
-    return <Button />;
+    return <ButtonComponent />;
 };
 
-export const ButtonTemplate = Template.bind({});
+export const Button = Template.bind({});

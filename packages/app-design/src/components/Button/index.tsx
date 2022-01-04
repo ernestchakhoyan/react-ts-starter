@@ -4,7 +4,7 @@ import React from 'react';
 export interface ButtonProps {
 }
 
-export function Index(props: ButtonProps) {
+export function Button(props: ButtonProps) {
     // const classes = useStyles();
     return (
         <div>
