@@ -19,5 +19,8 @@
     "@storybook/react": "^6.4.9",
     "csstype": "^3.0.10",
     "storybook-addon-designs": "^6.2.0"
+  },
+  "dependencies": {
+    "@ernest/common": "^1.0.0"
   }
 }
