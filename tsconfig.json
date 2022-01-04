@@ -1,0 +1,29 @@
+{
+  "compilerOptions": {
+    "allowJs": true,
+    "allowSyntheticDefaultImports": true,
+    "declaration": false,
+    "esModuleInterop": true,
+    "forceConsistentCasingInFileNames": true,
+    "importsNotUsedAsValues": "preserve",
+    "jsx": "react",
+    "lib": ["dom", "es2018"],
+    "module": "esnext",
+    "moduleResolution": "node",
+    "noImplicitAny": true,
+    "noUncheckedIndexedAccess": true,
+    "resolveJsonModule": true,
+    "skipLibCheck": true,
+    "sourceMap": true,
+    "strict": true,
+    "target": "esnext",
+    "outDir": "dist"
+  },
+  "include": [
+    "./packages/**/src",
+    "./packages/**/tools",
+    "./packages/**/static",
+    "./packages/**/test",
+  ],
+  "exclude": ["node_modules", "**/*.spec.ts"]
+}

@@ -1,0 +1,6 @@
+#IDE
+.idea
+
+#Extenal libs
+node_modules
+
