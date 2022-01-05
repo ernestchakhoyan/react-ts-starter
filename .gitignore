@@ -1,9 +1,13 @@
 #IDE
 .idea
 
+#Builds
+packages/*/public
+
 #Extenal libs
 node_modules
 
 #Logs
 packages/*/yarn-error.log
 yarn-error.log
+
