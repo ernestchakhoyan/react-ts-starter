@@ -1,8 +1,7 @@
 import React from "react";
-import {Story, Meta} from "@storybook/react";
+import { Meta, Story } from "@storybook/react";
 
-import {Button as ButtonComponent, ButtonProps} from "./index";
-
+import { Button as ButtonComponent, ButtonProps } from "./index";
 
 export default {
     title: "BaseComponents/Button",
@@ -14,7 +13,7 @@ export default {
     argTypes: {},
 } as Meta;
 
-const Template: Story<ButtonProps> = (args) => {
+const Template: Story<ButtonProps> = () => {
     return <ButtonComponent />;
 };
 

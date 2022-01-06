@@ -1,11 +1,9 @@
-import React from 'react';
+import React from "react";
 
-export interface ButtonProps {}
+export interface ButtonProps {
+    mode?: "primary";
+}
 
 export function Button() {
-    return (
-        <div>
-            Design Button
-        </div>
-    );
+    return <div>Design Button</div>;
 }

@@ -9,11 +9,7 @@ module.exports = {
     },
     babelrc: {
         presets: ["@babel/env", "@babel/preset-typescript", "@babel/preset-react"],
-        plugins: [
-            "@babel/plugin-proposal-class-properties",
-            "@babel/plugin-proposal-private-methods",
-            { loose: true },
-        ],
+        plugins: ["@babel/plugin-proposal-class-properties", "@babel/plugin-proposal-private-methods", { loose: true }],
     },
     webpackFinal: async (config) => {
         // `configType` has a value of 'DEVELOPMENT' or 'PRODUCTION'

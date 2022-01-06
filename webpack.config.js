@@ -23,10 +23,10 @@ module.exports = function (env, args = {}) {
         devtool: isProduction ? "source-map" : "inline-cheap-module-source-map",
         entry: here(dirs.src),
         resolve: {
-            extensions: [ ".tsx", ".ts", ".js" ],
+            extensions: [".tsx", ".ts", ".js"],
             alias: {
-                "app-design": here('./src/app-design'),
-                "common": here('./src/common'),
+                "app-design": here("./src/app-design"),
+                common: here("./src/common"),
             },
         },
         output: {
@@ -92,35 +92,33 @@ module.exports = function (env, args = {}) {
                     vendors: {
                         test: /[\\/]node_modules[\\/]/,
                         name(module, chunks, cacheGroupKey) {
-                            const packageName = module.context.match(
-                                /[\\/]node_modules[\\/](.*?)([\\/]|$)/
-                            )[ 1 ];
+                            const packageName = module.context.match(/[\\/]node_modules[\\/](.*?)([\\/]|$)/)[1];
                             return `${cacheGroupKey}.${packageName.replace("@", "")}`;
-                        }
+                        },
                     },
                     common: {
                         minChunks: 2,
-                        priority: -10
-                    }
+                        priority: -10,
+                    },
                 },
             },
             minimizer: [
                 new TerserWebpackPlugin({
                     terserOptions: {
                         compress: {
-                            comparisons: false
+                            comparisons: false,
                         },
                         mangle: {
-                            safari10: true
+                            safari10: true,
                         },
                         output: {
                             comments: false,
-                            ascii_only: true
+                            ascii_only: true,
                         },
-                        warnings: false
-                    }
+                        warnings: false,
+                    },
                 }),
-            ]
+            ],
         },
         performance: {
             hints: isProduction && "warning",
@@ -146,5 +144,4 @@ module.exports = function (env, args = {}) {
             },
         },
     };
-
 };

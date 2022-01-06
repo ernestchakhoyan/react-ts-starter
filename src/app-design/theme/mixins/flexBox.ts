@@ -23,7 +23,7 @@ interface FlexCenterHoriz {
     flexDirection: Properties["flexDirection"];
 }
 
-interface FlexCenterColumn extends FlexColumn {}
+type FlexCenterColumn = FlexColumn;
 
 const column: FlexColumn = {
     display: "flex",
