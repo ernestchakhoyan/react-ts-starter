@@ -17,13 +17,15 @@
     "sourceMap": true,
     "strict": true,
     "target": "esnext",
-    "outDir": "dist"
+    "outDir": "dist",
+    "typeRoots" : ["node_modules/@types", ".src/common/@types"],
+    "paths": {
+      "app-design": ["./src/app-design"],
+      "common": ["./src/common"],
+    }
   },
   "include": [
-    "./packages/**/src",
-    "./packages/**/tools",
-    "./packages/**/static",
-    "./packages/**/test",
+    "./src/**/*",
   ],
-  "exclude": ["node_modules", "**/*.spec.ts"]
+  "exclude": ["node_modules", "**/*.spec.ts"],
 }

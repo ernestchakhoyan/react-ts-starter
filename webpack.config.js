@@ -8,8 +8,8 @@ const CopyPlugin = require("copy-webpack-plugin");
 const here = (dir) => (dir ? path.resolve(process.cwd(), dir) : process.cwd());
 
 const dirs = {
-    src: "./src",
-    dist: "./public",
+    src: "./src/app",
+    dist: "./build",
 };
 
 module.exports = function (env, args = {}) {
@@ -21,9 +21,13 @@ module.exports = function (env, args = {}) {
         target: "web",
         mode: "development",
         devtool: isProduction ? "source-map" : "inline-cheap-module-source-map",
-        entry: here("./src/index.tsx"),
+        entry: here(dirs.src),
         resolve: {
             extensions: [ ".tsx", ".ts", ".js" ],
+            alias: {
+                "app-design": here('./src/app-design'),
+                "common": here('./src/common'),
+            },
         },
         output: {
             path: here(dirs.dist),
@@ -43,10 +47,6 @@ module.exports = function (env, args = {}) {
                     ],
                 },
                 {
-                    test: /\.css$/,
-                    use: [ "style-loader", "css-loader" ],
-                },
-                {
                     test: /\.(png|svg|jpg|jpeg|gif)$/i,
                     type: "asset/resource",
                 },
@@ -56,13 +56,13 @@ module.exports = function (env, args = {}) {
             new CopyPlugin({
                 patterns: [
                     {
-                        from: `${dirs.src}/static/img`,
+                        from: `${dirs.src}/assets/img`,
                         to: "./img",
                     },
                 ],
             }),
             new HtmlWebpackPlugin({
-                template: here("./src/static/index.html"),
+                template: here(`${dirs.src}/static/index.html`),
                 cache: true,
                 scriptLoading: "defer",
                 minify: isProduction && {
