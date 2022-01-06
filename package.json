@@ -17,6 +17,9 @@
         "format:fix": "eslint --ext .tsx,.ts . --fix && prettier --write .",
         "format:check": "eslint --ext .tsx,.ts . && prettier --check ."
     },
+    "engines": {
+        "node": ">=12.0.0"
+    },
     "dependencies": {
         "react": "^17.0.2",
         "react-dom": "^17.0.2"
@@ -25,6 +28,8 @@
         "@babel/preset-env": "^7.16.7",
         "@babel/preset-react": "^7.16.7",
         "@babel/preset-typescript": "^7.16.7",
+        "@commitlint/cli": "^16.0.1",
+        "@commitlint/config-conventional": "^16.0.0",
         "@pmmmwh/react-refresh-webpack-plugin": "^0.5.4",
         "@storybook/addon-actions": "^6.4.9",
         "@storybook/addon-docs": "^6.4.9",
