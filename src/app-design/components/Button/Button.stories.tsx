@@ -7,7 +7,7 @@ export default {
     title: "BaseComponents/Button",
     component: ButtonComponent,
     parameters: {
-        componentSubtitle: "Button UI component",
+        componentSubtitle: "Button UI component test",
     },
     args: {},
     argTypes: {},

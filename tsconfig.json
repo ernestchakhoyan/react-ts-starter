@@ -1,5 +1,7 @@
 {
     "compilerOptions": {
+        "outDir": "build",
+        "baseUrl": "src",
         "allowJs": true,
         "allowSyntheticDefaultImports": true,
         "declaration": false,
@@ -17,7 +19,7 @@
         "sourceMap": true,
         "strict": true,
         "target": "esnext",
-        "outDir": "dist",
+        "types": ["jest", "@testing-library/jest-dom"],
         "typeRoots": ["node_modules/@types", ".src/common/@types"],
         "paths": {
             "app-design": ["./src/app-design"],
@@ -25,5 +27,5 @@
         }
     },
     "include": ["./src/**/*"],
-    "exclude": ["node_modules", "**/*.spec.ts"]
+    "exclude": ["node_modules", "build"]
 }
