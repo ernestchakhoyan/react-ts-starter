@@ -1,7 +1,9 @@
 import React from "react";
-import Logo from "./assets/img/app-logo.png";
+
 import { Button } from "app-design";
 import { capitalize } from "common";
+
+import Logo from "./assets/img/app-logo.png";
 import { MainWrapper } from "./containers/MainWrapper";
 
 export function App() {

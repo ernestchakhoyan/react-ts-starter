@@ -10,5 +10,9 @@
     "singleQuote": false,
     "tabWidth": 4,
     "trailingComma": "es5",
-    "useTabs": false
+    "useTabs": false,
+    "importOrder": ["^react", "^(?!(react|@core/))\\w+", "^@material", "", "^@(core|ui)/", "^."],
+    "importOrderSeparation": true,
+    "importOrderSortSpecifiers": false,
+    "importOrderCaseInsensitive": true
 }
