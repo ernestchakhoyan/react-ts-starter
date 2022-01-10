@@ -11,7 +11,7 @@
     "tabWidth": 4,
     "trailingComma": "es5",
     "useTabs": false,
-    "importOrder": ["^react", "^(?!(react|@core/))\\w+", "^@material", "", "^@(core|ui)/", "^."],
+    "importOrder": ["^react", "^(?!(react|@core/))\\w+", "^@material", "^([@|(\\w)])", "", "^@(core|ui)/", "^."],
     "importOrderSeparation": true,
     "importOrderSortSpecifiers": false,
     "importOrderCaseInsensitive": true

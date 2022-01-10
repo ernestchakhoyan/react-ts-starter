@@ -1,6 +1,8 @@
 import React from "react";
-import { getUsers, users } from "../../stores";
+
 import { useStore } from "@nanostores/react";
+
+import { getUsers, users } from "../../stores";
 
 export function MainWrapper() {
     const usersList = useStore(users);
