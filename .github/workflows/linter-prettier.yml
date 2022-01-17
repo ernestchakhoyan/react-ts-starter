@@ -1,6 +1,6 @@
 name: Linter/Prettier
 
-on:[push]
+on: push
 
 
 jobs:
