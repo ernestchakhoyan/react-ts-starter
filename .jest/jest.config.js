@@ -1,5 +1,7 @@
 const path = require("path");
 
+const esModules = ['@nanostores/react', 'nanostores'].join('|');
+
 module.exports = {
     cache: true,
     verbose: true,
@@ -33,4 +35,7 @@ module.exports = {
     moduleFileExtensions: [ "ts", "tsx", "js" ],
 
     testEnvironment: "jsdom",
+
+    // ESM modules
+    transformIgnorePatterns: [`/node_modules/(?!${esModules})`],
 };
