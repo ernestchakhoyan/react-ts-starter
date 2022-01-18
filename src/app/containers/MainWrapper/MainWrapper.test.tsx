@@ -6,6 +6,6 @@ import { MainWrapper } from "./index";
 
 test("renders main wrapper container", () => {
     const { getByText } = render(<MainWrapper />);
-    const linkElement = getByText(/sss/i);
+    const linkElement = getByText(/hello/i);
     expect(linkElement).toBeInTheDocument();
 });
