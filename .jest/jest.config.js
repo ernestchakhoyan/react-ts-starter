@@ -1,5 +1,7 @@
 const path = require("path");
 
+const esModules = [ "@nanostores/react", "nanostores" ].join("|");
+
 module.exports = {
     cache: true,
     verbose: true,
@@ -9,14 +11,26 @@ module.exports = {
     // The root of source code
     roots: [ "<rootDir>/src" ],
 
+    // Coverage
     coverageDirectory: path.resolve(__dirname, "../coverage"),
-    collectCoverageFrom: [ "<rootDir>/src/**/**/*.test.{ts,tsx}", "!<rootDir>/src/**/*.d.ts", "!<rootDir>/src/app-design/**/*.{ts,js,tsx}" ],
+    collectCoverageFrom: [
+        "<rootDir>/src/**/*.{ts,tsx}",
+        "!<rootDir>/src/app-design/**",
+        "!<rootDir>/src/**/*.d.ts",
+        "!<rootDir>/src/app/*/index.{ts,tsx,js,jsx}",
+        "!<rootDir>/src/common/*/index.{ts,tsx,js,jsx}",
+    ],
+    coveragePathIgnorePatterns: [
+        "<rootDir>/src/app/App.tsx",
+        "<rootDir>/src/app/index.tsx",
+        "<rootDir>/src/common/index.ts",
+    ],
     coverageThreshold: {
         global: {
-            branches: 60,
-            functions: 60,
-            lines: 60,
-            statements: 60,
+            branches: 0,
+            functions: 0,
+            lines: 0,
+            statements: 0,
         }
     },
     coverageReporters: [ "text", "json", "html" ],
@@ -33,4 +47,10 @@ module.exports = {
     moduleFileExtensions: [ "ts", "tsx", "js" ],
 
     testEnvironment: "jsdom",
+
+    // ESM modules
+    transformIgnorePatterns: [ `/node_modules/(?!${esModules})` ],
+    transform: {
+        "^.+\\.(js|jsx|ts|tsx)$": "<rootDir>/node_modules/ts-jest"
+    }
 };

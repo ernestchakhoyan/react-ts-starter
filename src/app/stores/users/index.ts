@@ -7,8 +7,12 @@ export function addUsers(values: []) {
 }
 
 export const getUsers = async () => {
-    const response = await fetch("https://jsonplaceholder.typicode.com/users");
-    const data = await response.json();
+    try {
+        const response = await fetch("https://jsonplaceholder.typicode.com/users");
+        const data = await response.json();
 
-    addUsers(data);
+        addUsers(data);
+    } catch (e) {
+        return null;
+    }
 };
