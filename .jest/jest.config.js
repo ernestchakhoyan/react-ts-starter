@@ -1,6 +1,6 @@
 const path = require("path");
 
-const esModules = ['@nanostores/react', 'nanostores'].join('|');
+const esModules = [ "@nanostores/react", "nanostores" ].join("|");
 
 module.exports = {
     cache: true,
@@ -11,8 +11,20 @@ module.exports = {
     // The root of source code
     roots: [ "<rootDir>/src" ],
 
+    // Coverage
     coverageDirectory: path.resolve(__dirname, "../coverage"),
-    collectCoverageFrom: [ "<rootDir>/src/**/**/*.test.{ts,tsx}", "!<rootDir>/src/**/*.d.ts", "!<rootDir>/src/app-design/**/*.{ts,js,tsx}" ],
+    collectCoverageFrom: [
+        "<rootDir>/src/**/*.{ts,tsx}",
+        "!<rootDir>/src/app-design/**",
+        "!<rootDir>/src/**/*.d.ts",
+        "!<rootDir>/src/app/*/index.{ts,tsx,js,jsx}",
+        "!<rootDir>/src/common/*/index.{ts,tsx,js,jsx}",
+    ],
+    coveragePathIgnorePatterns: [
+        "<rootDir>/src/app/App.tsx",
+        "<rootDir>/src/app/index.tsx",
+        "<rootDir>/src/common/index.ts",
+    ],
     coverageThreshold: {
         global: {
             branches: 60,
@@ -37,5 +49,8 @@ module.exports = {
     testEnvironment: "jsdom",
 
     // ESM modules
-    transformIgnorePatterns: [`/node_modules/(?!${esModules})`],
+    transformIgnorePatterns: [ `/node_modules/(?!${esModules})` ],
+    transform: {
+        "^.+\\.(js|jsx|ts|tsx)$": "<rootDir>/node_modules/ts-jest"
+    }
 };
